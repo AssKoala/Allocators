@@ -22,10 +22,14 @@ set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/../bin)
 
 set(SOURCEDIR source)
 set(SOURCES ${SOURCEDIR}/main.cpp
+			${SOURCEDIR}/allocators/FixedBlockAllocator.cpp
 			)
 
 set(INCLUDEDIR include)
-set(INCLUDES 	${INCLUDEDIR}/IKoalaAllocator.h
+set(INCLUDES 	${INCLUDEDIR}/IAllocator.h
+				${INCLUDEDIR}/KoalaAllocator.h
+				${INCLUDEDIR}/FixedBlockAllocator.h
+				${INCLUDEDIR}/koala_intrusive_list.h
 				)
 
 add_executable(koala-allocators ${SOURCES} ${INCLUDES})
